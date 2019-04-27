@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             val final = listRoll.sum()+xmod
 
             //display
-            this.findViewById<TextView>(R.id.displayRoll).apply {
+                this.findViewById<TextView>(R.id.displayRoll).apply {
                 text = listRoll.toString()
             }
             this.findViewById<TextView>(R.id.displayMod).apply {
