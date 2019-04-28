@@ -65,10 +65,10 @@ def bitstring(n):
 
 # Returns a random integer between and including [min, max].
 # Running time is probabalistic but complexity is still O(n)
-def randint(min, max):
-    delta = max - min
+def randint(max):
+    delta = max - 1
     n = math.floor(math.log(delta, 2)) + 1
     result = int(bitstring(n), 2)
     while (result > delta):
         result = int(bitstring(n), 2)
-    return result + min
+    return result + 1

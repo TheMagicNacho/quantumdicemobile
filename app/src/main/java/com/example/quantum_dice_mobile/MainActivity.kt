@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.chaquo.python.PyObject
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 //python integration
@@ -27,6 +28,14 @@ class MainActivity : AppCompatActivity() {
             val xdice = Integer.parseInt(dice)
             val xsides = Integer.parseInt(sides)
             val xmod = Integer.parseInt(mod)
+            if (! Python.isStarted()) {
+                Python.start(AndroidPlatform(this))
+            }
+
+            val py: Python = Python.getInstance()
+            var qint = py.getModule("test").callAttr("get_python_text", "Justin")
+
+            //my_text_view.text = qint.toString()
 
             // LIST
             val listRoll = mutableListOf(1)
@@ -36,17 +45,13 @@ class MainActivity : AppCompatActivity() {
                   val randomGenerator = Random()
                  val randInt = randomGenerator.nextInt(xsides) + 1
                 //quantum random number
-                //start python
-               // if (! Python.isStarted()) {
-                 //   Python.start(AndroidPlatform(this))
-               // }
-               // val py: Python = Python.getInstance()
-               // var randInt = py.getModule("qengine").callAttr("randint", "xsides")
-                //my_text_view.text = pythonText.toString()
+
 
             // append to list
-                listRoll.add(randInt)
+                listRoll.add(randInt) //TODO: re-include randint
+
             }
+
 
             val final = listRoll.sum()+xmod
 
@@ -55,7 +60,8 @@ class MainActivity : AppCompatActivity() {
                 text = listRoll.toString()
             }
             this.findViewById<TextView>(R.id.displayMod).apply {
-                text = mod
+                //text = mod
+                text = qint.toString()
             }
             this.findViewById<TextView>(R.id.displayFinal).apply {
                 text = final.toString()
@@ -63,3 +69,5 @@ class MainActivity : AppCompatActivity() {
             //Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
         }
     }}
+
+
