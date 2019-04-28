@@ -1,18 +1,28 @@
 apply plugin: 'com.android.application'
 
+apply plugin: "com.chaquo.python"  //  Python Integration
+
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+//buildScan { termsOfServiceUrl = 'https://gradle.com/terms-of-service'; termsOfServiceAgree = 'yes' }
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.quantum_dice_mobile"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //Python Integration
+        ndk {abiFilters "x86", "armeabi-v7a"}
+        python {
+            buildPython "/usr/bin/python"
+            version "2.7.10"
+           // staticProxy "demo.chaquopy.quantum_dice_mobile.MainActivity"
+        }
     }
     buildTypes {
         release {

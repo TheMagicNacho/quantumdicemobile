@@ -6,17 +6,19 @@ import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+//python integration
+import com.chaquo.python.Python
+import com.chaquo.python.android.AndroidPlatform
 
 class MainActivity : AppCompatActivity() {
-
     // constructor(parcel: Parcel) : this() {}
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         // get reference to button
         val roll = findViewById<Button>(R.id.button)
-
         // set on-click listener
         roll.setOnClickListener {
             val dice = numDice.text.toString()
@@ -30,9 +32,19 @@ class MainActivity : AppCompatActivity() {
             val listRoll = mutableListOf(1)
             listRoll.removeAt(0)
             for (i in 1..xdice) {
-                //random number generator - TODO: insert quantum engine requirements here
-                val randomGenerator = Random()
-                val randInt = randomGenerator.nextInt(xsides) + 1
+                //JAVA RANDOM NUMBER  TODO: Create java logic for degraded network conditions
+                  val randomGenerator = Random()
+                 val randInt = randomGenerator.nextInt(xsides) + 1
+                //quantum random number
+                //start python
+               // if (! Python.isStarted()) {
+                 //   Python.start(AndroidPlatform(this))
+               // }
+               // val py: Python = Python.getInstance()
+               // var randInt = py.getModule("qengine").callAttr("randint", "xsides")
+                //my_text_view.text = pythonText.toString()
+
+            // append to list
                 listRoll.add(randInt)
             }
 
