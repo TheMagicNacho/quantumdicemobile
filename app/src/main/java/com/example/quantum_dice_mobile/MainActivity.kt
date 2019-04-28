@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             val py: Python = Python.getInstance()
-            var qint = py.getModule("test").callAttr("get_python_text", "Justin")
+            var qint = py.getModule("qengine").callAttr("grab", "4")
 
             //my_text_view.text = qint.toString()
 
