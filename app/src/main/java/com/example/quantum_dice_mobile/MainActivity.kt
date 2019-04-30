@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             if (! Python.isStarted()) {
                 Python.start(AndroidPlatform(this))
             }
-
             val py: Python = Python.getInstance()
             var qint = py.getModule("qengine").callAttr("grab", sides)
 
