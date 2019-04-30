@@ -28,26 +28,27 @@ class MainActivity : AppCompatActivity() {
             val xdice = Integer.parseInt(dice)
             val xsides = Integer.parseInt(sides)
             val xmod = Integer.parseInt(mod)
-            if (! Python.isStarted()) {
-                Python.start(AndroidPlatform(this))
-            }
-            val py: Python = Python.getInstance()
-            var qint = py.getModule("qengine").callAttr("grab", sides)
 
-            //my_text_view.text = qint.toString()
 
             // LIST
             val listRoll = mutableListOf(1)
             listRoll.removeAt(0)
             for (i in 1..xdice) {
                 //JAVA RANDOM NUMBER  TODO: Create java logic for degraded network conditions
-                  val randomGenerator = Random()
-                 val randInt = randomGenerator.nextInt(xsides) + 1
+                //  val randomGenerator = Random()
+                // val randInt = randomGenerator.nextInt(xsides) + 1
                 //quantum random number
-
-
+                //START PYTHON
+                if (! Python.isStarted()) {
+                    Python.start(AndroidPlatform(this))
+                }
+                val py: Python = Python.getInstance()
+                var rawQ = py.getModule("qengine").callAttr("randint", sides)
+                var callQ = rawQ.toString()
+                var qint = Integer.parseInt(callQ)
+                //END PYTHON
             // append to list
-                listRoll.add(randInt) //TODO: re-include randint
+                listRoll.add(qint) //TODO: re-include randint
 
             }
 
@@ -59,8 +60,8 @@ class MainActivity : AppCompatActivity() {
                 text = listRoll.toString()
             }
             this.findViewById<TextView>(R.id.displayMod).apply {
-                //text = mod
-                text = qint.toString()
+                text = mod
+                //text = qint.toString()
             }
             this.findViewById<TextView>(R.id.displayFinal).apply {
                 text = final.toString()

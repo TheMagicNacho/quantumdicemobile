@@ -6,7 +6,6 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -21,6 +20,8 @@ android {
         python {
             pip {
                 install "numpy"
+                install "qiskit_terra==0.7.1"
+                //install "qiskit_aqua"
             }
             buildPython "/home/admin/anaconda3/bin/python"
             //version "2.7.10"
