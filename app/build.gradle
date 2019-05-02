@@ -20,8 +20,8 @@ android {
         python {
             pip {
                 install "numpy"
-                install "qiskit_terra==0.7.1"
-                //install "qiskit_aqua"
+                // install "qiskit_terra==0.7.1"
+                //install "qiskit==0.8.0" //ideally I want to use this package, but this will not even build
             }
             buildPython "/home/admin/anaconda3/bin/python"
             //version "2.7.10"
