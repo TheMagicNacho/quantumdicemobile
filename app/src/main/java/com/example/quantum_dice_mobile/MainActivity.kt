@@ -2,10 +2,14 @@ package com.example.quantum_dice_mobile
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.Button
+import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import com.chaquo.python.Python
@@ -25,7 +29,49 @@ class MainActivity : AppCompatActivity() {
         // CALL ASSETS
         setContentView(R.layout.activity_main)
         val roll = findViewById<Button>(R.id.button)
-        // LISTEN FOR BUTTON
+
+
+        // ADD MENU
+        menu_btn.setOnClickListener {
+            val popupMenu = PopupMenu(this, it)
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId){
+                    R.id.about -> {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://justingpeter.com"))
+                        startActivity(intent)
+                        true
+                    }
+                    R.id.version -> {
+                        Toast.makeText(this, "Version Placeholder", Toast.LENGTH_LONG).show()
+                        true
+                    }
+                    R.id.copyright -> {
+                        Toast.makeText(this, "copyright placeholder", Toast.LENGTH_LONG).show()
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            popupMenu.inflate(R.menu.menu_main)
+            try {
+                val fieldMPopup = PopupMenu::class.java.getDeclaredField("mPopup")
+                fieldMPopup.isAccessible = true
+                val mPopup = fieldMPopup.get(popupMenu)
+                mPopup.javaClass
+                    .getDeclaredMethod("setForceShowIcon", Boolean::class.java)
+                    .invoke(mPopup, true)
+            } catch (e: Exception){
+                Log.e("Main", "Error showing menu icons.", e)
+            } finally {
+                popupMenu.show()
+            }
+        }
+
+
+
+
+        // LISTEN FOR ROLL
         roll.setOnClickListener {
             val dice = numDice.text.toString()
             val sides = numSides.text.toString()
