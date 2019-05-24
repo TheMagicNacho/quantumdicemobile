@@ -100,5 +100,5 @@ class MainActivity : AppCompatActivity() {
                 AlertDialog.Builder(this).setTitle("Please Enter a Number")
                     .setMessage("INTEGER ERROR: You must enter a number for dice and sides. The modifier may be left Zero.")
                     .setPositiveButton(android.R.string.ok) { _, _ -> }
-                    .setIcon(android.R.drawable.ic_delete).show()
+                    .setIcon(android.R.drawable.ic_input_get).show()
             } } } }

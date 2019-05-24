@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">The Quantum Dice</string>
     <string name="roll_dice">ROLL DICE</string>
-    <string name="dices_rolled">dices rolled</string>
-    <string name="number_of_dice">number of dice</string>
-    <string name="modifier">modifier</string>
-    <string name="number_of_sides">number of sides</string>
-    <string name="grand_total">GRAND TOTAL</string>
+    <string name="dices_rolled">Dices Rolled</string>
+    <string name="modifier">Modifier:</string>
+    <string name="number_of_dice">Number of Dice:</string>
 </resources>
