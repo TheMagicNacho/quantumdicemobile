@@ -182,13 +182,13 @@
             app:layout_constraintHorizontal_bias="0.529" app:layout_constraintTop_toBottomOf="@+id/displayMod"
             android:layout_marginTop="20dp"/>
     <TextView
-            android:text="@string/app_name"
+            android:text="@string/app_name_full"
             style="@style/app_name"
             android:layout_width="360dp"
             android:layout_height="25dp"
             android:id="@+id/app_name" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            tools:text="@string/app_name"
+            tools:text="@string/app_name_full"
             android:textAlignment="center" android:fontFamily="sans-serif-light"
             app:layout_constraintTop_toBottomOf="@+id/logo"/>
     <android.support.constraint.Guideline

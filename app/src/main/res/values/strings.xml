@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">The Quantum Dice</string>
+    <string name="app_name">Q-Dice</string>
+    <string name="app_name_full">The Quantum Dice</string>
     <string name="roll_dice">ROLL DICE</string>
     <string name="dices_rolled">dices rolled</string>
     <string name="number_of_dice">number of dice</string>
