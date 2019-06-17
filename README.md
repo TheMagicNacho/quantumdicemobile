@@ -1,5 +1,7 @@
-# quantumdicemobile
+# The Quantum Dice Mobile (Q-Dice)
 ### Android UI for the quantum dice engine.
+Read the documentation: [Website](https://www.artemisorbitals.com/products/thequantumdice).
+
 NOW YOU CAN PLAY WITH A QUANTUM DEVICE ON YOUR PHONE!
 With Q-Dice literally, all possibilities exist, and a single measurable outcome is provided!
 The Quantum Dice mobile app uses IBM’s Qiskit, which leverages a quantum CPU, to generate a truly random set of numbers.
