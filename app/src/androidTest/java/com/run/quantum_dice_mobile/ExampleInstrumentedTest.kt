@@ -1,4 +1,4 @@
-package com.example.quantum_dice_mobile
+package com.run.quantum_dice_mobile
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

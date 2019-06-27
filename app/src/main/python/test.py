@@ -1,3 +1,6 @@
-def get_python_text(name):
-    x = name + 5
-    return x
+import random
+def randint(name):
+    xname = int(name)
+    random.randint(1,101)
+    y = random.randint(1, xname)
+    return y

@@ -1,4 +1,4 @@
-package com.example.quantum_dice_mobile
+package com.run.quantum_dice_mobile
 
 import android.app.AlertDialog
 import android.content.Context
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             popupMenu.setOnMenuItemClickListener { item ->
                 when (item.itemId){
                     R.id.about -> {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://justingpeter.com"))
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://artemisorbitals.com/products/the-quantum-dice/"))
                         startActivity(intent)
                         true
                     }
@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                     else -> false
                 }
             }
-
             popupMenu.inflate(R.menu.menu_main)
             try {
                 val fieldMPopup = PopupMenu::class.java.getDeclaredField("mPopup")
@@ -67,10 +66,6 @@ class MainActivity : AppCompatActivity() {
                 popupMenu.show()
             }
         }
-
-
-
-
         // LISTEN FOR ROLL
         roll.setOnClickListener {
             val dice = numDice.text.toString()

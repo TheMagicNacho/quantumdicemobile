@@ -1,4 +1,4 @@
-package com.example.quantum_dice_mobile
+package com.run
 
 import org.junit.Test
 
