@@ -3,12 +3,16 @@
     <string name="app_name_full">The Quantum Dice</string>
     <string name="roll_dice">ROLL DICE</string>
     <string name="dices_rolled">dices rolled</string>
+    <string name="rolled_rules">The number of Dice you would like to roll.</string>
     <string name="number_of_dice">number of dice</string>
     <string name="modifier">modifier</string>
+    <string name="modifier_rules">Modifyer: An integer used to modify the sum of random numbers.</string>
     <string name="number_of_sides">number of sides</string>
+    <string name="sides_rules">The number of sides on each dice.</string>
     <string name="grand_total">GRAND TOTAL</string>
     <string name="about">About</string>
     <string name="version">Version</string>
     <string name="copyright">Copyright</string>
+    <string name="dash">---</string>
 
 </resources>

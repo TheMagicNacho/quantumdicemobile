@@ -12,15 +12,14 @@ android {
         applicationId "com.run.quantum_dice_mobile"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.2"
+        versionCode 5
+        versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {abiFilters "x86", "armeabi-v7a", "arm64-v8a", "x86_64"}
         //Python Integration
         python {
-          extractPackages "qiskit"
+         // extractPackages "qiskit"
             pip {
-
                 install "numpy"
                 //options "--extra-index-url", "https://pypi.org/project/qiskit", "--no-dependencies"
                 install "qiskit==0.7.0"
